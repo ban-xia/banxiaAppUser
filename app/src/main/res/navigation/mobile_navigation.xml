@@ -7,19 +7,55 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="cn.xq.festec.banxiaappuser.ui.home.HomeFragment"
-        android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+        android:name="cn.xq.festec.banxiaappuser.ui.index.IndexFragment"
+        android:label="@string/title_index"
+        tools:layout="@layout/fragment_index" >
+        <action
+            android:id="@+id/action_navigation_home_to_departFragment"
+            app:destination="@id/departFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_dashboard"
-        android:name="cn.xq.festec.banxiaappuser.ui.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        android:name="cn.xq.festec.banxiaappuser.ui.article.ArticleFragment"
+        android:label="@string/title_article"
+        tools:layout="@layout/fragment_article" />
 
     <fragment
         android:id="@+id/navigation_notifications"
-        android:name="cn.xq.festec.banxiaappuser.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
+        android:name="cn.xq.festec.banxiaappuser.ui.mine.MineFragment"
+        android:label="@string/title_mine"
+        tools:layout="@layout/fragment_mine" >
+        <action
+            android:id="@+id/action_navigation_notifications_to_recordFragment"
+            app:destination="@id/recordFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/departFragment"
+        android:name="cn.xq.festec.banxiaappuser.ui.index.DepartFragment"
+        android:label="科室"
+        tools:layout="@layout/fragment_depart" >
+        <action
+            android:id="@+id/action_departFragment_to_doctorFragment"
+            app:destination="@id/doctorFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/doctorFragment"
+        android:name="cn.xq.festec.banxiaappuser.ui.index.DoctorFragment"
+        android:label="选择预约"
+        tools:layout="@layout/fragment_doctor" >
+        <action
+            android:id="@+id/action_doctorFragment_to_treatFragment"
+            app:destination="@id/treatFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/treatFragment"
+        android:name="cn.xq.festec.banxiaappuser.ui.index.TreatFragment"
+        android:label="支付"
+        tools:layout="@layout/fragment_treat" />
+    <fragment
+        android:id="@+id/recordFragment"
+        android:name="cn.xq.festec.banxiaappuser.ui.mine.RecordFragment"
+        android:label="病历详情"
+        tools:layout="@layout/fragment_record" />
 </navigation>

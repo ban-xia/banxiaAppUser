@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_one"
+        android:title="一" />
+
+    <item
+        android:id="@+id/navigation_two"
+        android:title="二" />
+
+    <item
+        android:id="@+id/navigation_three"
+        android:title="三" />
+
+    <item
+        android:id="@+id/navigation_four"
+        android:title="四" />
+
+    <item
+        android:id="@+id/navigation_five"
+        android:title="五" />
+
+    <item
+        android:id="@+id/navigation_six"
+        android:title="六" />
+
+    <item
+        android:id="@+id/navigation_seven"
+        android:title="七" />
+
+
+</menu>

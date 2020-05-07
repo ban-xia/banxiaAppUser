@@ -2,6 +2,7 @@ package cn.xq.festec.banxiaappuser;
 
 import android.os.Bundle;
 
+import com.facebook.drawee.backends.pipeline.Fresco;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,6 +12,9 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 public class MainActivity extends AppCompatActivity {
+
+    private NavController mNavController;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +29,16 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(navView, navController);
+
+        Fresco.initialize(this);
+        mNavController = Navigation.findNavController(findViewById(R.id.nav_host_fragment));
+        NavigationUI.setupActionBarWithNavController(this, mNavController);
+    }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        mNavController.navigateUp();
+        return super.onSupportNavigateUp();
     }
 
 }
